@@ -1,0 +1,383 @@
+html,
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+pre,
+form,
+p,
+blockquote,
+input,
+abbr,
+article,
+aside,
+figcaption,
+fieldset,
+figure,
+footer,
+header,
+mark,
+meter,
+menu,
+nav,
+output,
+progress,
+section,
+summary,
+time {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+iframe,
+a,
+img,
+button {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+figure,
+figcaption {
+    display: block;
+}
+
+input,
+textarea,
+button,
+select {
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+input[type=submit],
+input[type=button],
+input[type=text],
+textarea,
+button,
+select {
+    //for ipad iphone
+    -webkit-appearance: none;
+}
+
+// body {
+//     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+//     margin: 0;
+//     font-size: 14px;
+//     line-height: 1.5;
+//     color: #333;
+// }
+
+// 浮动
+.f_left{float:left;}
+.f_right{float:right;}
+
+@grey_33: #333;
+@grey_66: #666;
+@grey_99: #999;
+@green: #38b447;
+
+.clearfix() {
+    *zoom: 1; /* IE6、7 */
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+        overflow: hidden; /* overflow: hidden 也能起到清除浮动的作用 */
+    }
+}
+
+// 默认文字超出显示3个点，可设置其他值
+.ellipsis(@val: ellipsis) {
+    text-overflow: @val;
+    -o-text-overflow: @val;
+    -ms-text-overflow: @val;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    word-wrap: normal;
+}
+
+// 清除浮动
+.clearfix {
+    .clearfix();
+}
+.clear{clear:both;}
+
+// 显示
+.none {display: none;}
+.hidden{visibility: hidden;}
+.inline_block{display: inline-block;}
+.ellipsis {
+    .ellipsis();
+}
+
+// 对齐
+.t_left{text-align: left;}
+.t_center{text-align: center;}
+.t_right{text-align: right;}
+
+.f_bold {font-weight: bold;}
+
+.middle{vertical-align: middle;}
+.hand{cursor: pointer;}
+
+body {
+    // 首选字体FZLTXHJW--GB1-0替换成PingFang SC字体
+    font: normal 14px/1.5 PingFang SC,
+    Arial,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    STHeiti,
+    WenQuanYi Micro Hei,
+    simsun,
+    sans-serif;
+
+    // 兼容IE7浏览器不正常显示，微软雅黑Unicide编码为\5FAE\8F6F\96C5\9ED1
+    *font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana, sans-serif, STHeiTi;
+
+    color: @grey_33;
+    background-color: #f5f7f9;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+    // 首选字体FZLTXHJW--GB1-0替换成PingFang SC字体
+    font: normal 14px/1.5 PingFang SC,
+    Arial,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    STHeiti,
+    WenQuanYi Micro Hei,
+    simsun,
+    sans-serif;
+
+    // 兼容IE7浏览器不正常显示，微软雅黑Unicide编码为\5FAE\8F6F\96C5\9ED1
+    *font-family: "\5FAE\8F6F\96C5\9ED1", Tahoma, Verdana, sans-serif, STHeiTi;
+}
+
+// placeholder
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: @grey_99 !important;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: @grey_99 !important;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: @grey_99 !important;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: @grey_99 !important;
+}
+
+a {
+    color: @grey_33;
+
+    &.a_green {
+        color: @green;
+    }
+
+    // 带下划线的链接
+    &.a_u {
+        text-decoration: underline;
+    }
+
+    // 鼠标hover带下划线
+    &.link {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &:hover {
+        -webkit-transition: color linear 0.2s;
+        transition: color linear 0.2s;
+        color: @green;
+        text-decoration: none;
+    }
+}
+
+// 文字选中颜色
+::selection {
+    background-color: @green;
+    color: #fff;
+}
+
+// @font-face {
+//     font-family: "iconfont";
+//     src: url('/v3/font/iconfont.eot?t=1470306397'); /* IE9*/
+//     src: url('/v3/font/iconfont.eot?t=1470306397#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//     url('/v3/font/iconfont.woff?t=1470306397') format('woff'), /* chrome, firefox */
+//     url('/v3/font/iconfont.ttf?t=1470306397') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+//     url('/v3/font/iconfont.svg?t=1470306397#iconfont') format('svg'); /* iOS 4.1- */
+// }
+
+// // 图标字体公用样式
+// .icon {
+//     display: inline-block;
+//     font-family: "iconfont";
+//     -webkit-font-smoothing: antialiased;
+//     -webkit-text-stroke-width: 0.2px;
+//     -moz-osx-font-smoothing: grayscale;
+//     line-height: 1;
+//     speak: none;
+// }
+
+.header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background: #324157;
+
+    .logo {
+        float: left;
+        padding-left: 10px;
+        font-size: 30px;
+        font-weight: 900;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        letter-spacing: -1px;
+        line-height: 58px;
+        color: #20a0ff;
+    }
+
+    .el-menu {
+        border-radius: 0;
+        margin-left: 130px;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+    width: 150px;
+    height: 100%;
+
+    .el-menu {
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .el-menu-item a {
+        display: block;
+        text-decoration: none;
+        color: #48576a;
+    }
+
+    .el-menu-item.is-active a {
+        color: #20a0ff;
+    }
+}
+
+.container {
+    position: absolute;
+    top: 70px;
+    left: 160px;
+    right: 0;
+    padding-bottom: 20px;
+}
+
+.condition {
+    margin-bottom: 15px;
+
+    .el-select {
+        margin-right: 15px;
+    }
+
+    .el-date-editor {
+        margin-right: 5px;
+    }
+}
+
+.explain {
+    margin-bottom: 15px;
+}
+
+.el-message {
+    z-index: 1000;
+}
+
+.el-pagination {
+    margin-top: 15px;
+}
+
+.el-tabs__item a {
+    display: block;
+}
+
+// Loading组件
+.el-loading-spinner {
+    top: 200px;
+}
